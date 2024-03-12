@@ -113,7 +113,7 @@ def play():
 
             turn = "X"
 
-        return {"result": result, "board": board, "game_end": game_end}
+        return jsonify({"board": board, "turn": turn, "game_end": game_end})
 
 @app.route("/restart", methods=["POST"])
 def restart():
@@ -123,7 +123,7 @@ def restart():
              7: " ", 8: " ", 9: " "}
     turn = "X"
     game_end = False
-    return jsonify{"board": board, "turn": turn, "game_end": game_end}
+    return {"board": board, "turn": turn, "game_end": game_end}
 
 @app.route("/mode", methods=["POST"])
 def change_mode():
@@ -132,4 +132,4 @@ def change_mode():
     return {"mode": mode}
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(debug=True)

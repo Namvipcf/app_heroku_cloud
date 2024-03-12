@@ -123,7 +123,7 @@ def restart():
              7: " ", 8: " ", 9: " "}
     turn = "X"
     game_end = False
-    return {"board": board, "turn": turn, "game_end": game_end}
+    return jsonify{"board": board, "turn": turn, "game_end": game_end}
 
 @app.route("/mode", methods=["POST"])
 def change_mode():

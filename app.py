@@ -113,7 +113,7 @@ def play():
 
             turn = "X"
 
-        return jsonify({"board": board, "turn": turn, "game_end": game_end})
+        return {"board": board, "turn": turn, "game_end": game_end}
 
 @app.route("/restart", methods=["POST"])
 def restart():
